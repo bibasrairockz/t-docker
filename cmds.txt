@@ -1,0 +1,47 @@
+mkdir dockertest  
+cd dockertest  
+code . 
+wsl --install  
+docker  
+docker images  
+docker ps
+
+<   
+from flask import Flask
+import numpy as np
+import pandas as pd
+
+app = Flask(__name__)
+
+@app.route("/", methods=["GET", "POST"])
+def home():
+    return "Hello World!" 
+
+if __name__=="__main__":
+    app.run(host="0.0.0.0",port=5000)
+> 
+  
+<
+FR0M python:3.9
+
+COPY . /app
+
+WORKDIR /app
+
+RUN pip install -r requirements.txt
+
+CMD ["python", "app.py"]
+>
+
+<
+flask
+pandas
+numpy
+>
+  
+docker build -t helloworldapp .
+docker images 
+docker ps 
+docker run -d -p 5000:5000 helloworldapp
+docker ps 
+docker stop b463fe4304ec
