@@ -1,0 +1,52 @@
+docker  
+where docker  
+docker info  
+docker -v  
+
+docker images
+docker ps
+docker ps -a
+
+docker run -d -p 8000:5000 helloworldapp
+
+docker login 
+docker tag helloworldapp bibasrairockz/demohelloworld  
+docker push bibasrairockz/demohelloworld  
+
+docker pull redis  
+
+docker run -it ubuntu /bin/bash
+ls
+cd bin
+ls
+exit
+
+docker run -it kalilinux/kali-rolling /bin/sh  
+ls
+touch testing.txt  
+ls  
+exit  
+
+docker run -it jenkins/jenkins:lts    
+docker rmi -f jenkins/jenkins:lts  
+
+docker run -p 8080:8080 jenkins/jenkins:lts  
+
+
+<
+FROM ubuntu
+WORKDIR /tmp
+RUN echo "Artificail Intelligence"
+ENV myname Bibas    
+COPY testfile /tmp
+ADD test.tar.gz /tmp
+>
+
+
+docker build -t newimage .      
+docker run -i -t --name newcontainer1 newimage /bin/bash  
+ls
+echo $myname
+exit
+
+
