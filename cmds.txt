@@ -44,4 +44,6 @@ docker images
 docker ps 
 docker run -d -p 5000:5000 helloworldapp
 docker ps 
-docker stop b463fe4304ec
+docker stop b463fe4304ec  
+// force delete image <none>  
+docker image rmi -f 5ca529943720   
